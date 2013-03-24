@@ -63,3 +63,6 @@ build-aux/missing
 /src/lzmainfo/Makefile
 /src/xzdec/Makefile
 src/liblzma/lzma.a
+/smart
+/smart.backup.*
+/smart.e.backup.*
