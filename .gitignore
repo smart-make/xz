@@ -62,3 +62,4 @@ build-aux/missing
 /src/liblzma/api/Makefile
 /src/lzmainfo/Makefile
 /src/xzdec/Makefile
+src/liblzma/lzma.a
