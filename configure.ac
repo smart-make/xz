@@ -260,7 +260,7 @@ else
 	done
 	AC_MSG_RESULT([$enable_checks])
 fi
-if test "x$enable_checks_crc32" = xno ; then
+if test "x$enable_check_crc32" = xno ; then
 	AC_MSG_ERROR([For now, the CRC32 check must always be enabled.])
 fi
 
@@ -443,7 +443,9 @@ fi
 echo
 echo "Initializing Automake:"
 
-AM_INIT_AUTOMAKE([1.10 foreign tar-v7 filename-length-max=99])
+# Automake 1.10 should still be enough but you need to omit serial-tests.
+dnl AM_INIT_AUTOMAKE([1.10 foreign tar-v7 filename-length-max=99])
+AM_INIT_AUTOMAKE([1.12 foreign tar-v7 filename-length-max=99 serial-tests])
 AC_PROG_LN_S
 
 AC_PROG_CC_C99
@@ -653,6 +655,7 @@ if test "$GCC" = yes ; then
 	for NEW_FLAG in \
 			-Wall \
 			-Wextra \
+			-Wvla \
 			-Wformat=2 \
 			-Winit-self \
 			-Wmissing-include-dirs \
